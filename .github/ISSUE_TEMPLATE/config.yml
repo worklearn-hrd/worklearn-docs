@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 구현 작업·버그는 코드 레포에
+    url: https://github.com/worklearn-hrd
+    about: 이 레포에는 에픽과 문서 작업만 만듭니다. api·batch·web·infra 작업은 해당 레포에서 만들고 에픽의 sub-issue로 연결하세요.

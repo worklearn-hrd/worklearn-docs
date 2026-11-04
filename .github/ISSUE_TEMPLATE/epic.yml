@@ -1,0 +1,50 @@
+name: 에픽 (Epic)
+description: 기획서의 기능 하나 또는 브리프의 화면 하나. 구현 작업은 코드 레포에 만들어 sub-issue로 연결합니다
+title: "[에픽] "
+labels: ["type:epic"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        에픽은 이 레포에만 만듭니다. 만든 뒤 **마일스톤(단계)**과 **`area:*` 라벨**(움직이는 레포)을 설정하세요.
+        에픽에는 PR을 달지 않습니다. 하위 작업이 모두 닫히고 "원본 반영 필요"가 정리되면 수동으로 닫습니다.
+  - type: input
+    id: source
+    attributes:
+      label: 근거
+      description: 기획서 섹션 또는 브리프 화면 번호
+      placeholder: "예: 기획서 §2.3, 브리프 L2 · A3"
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 범위
+      description: 무엇을 포함하고 무엇을 뺄지. 1차 범위 경계("여기까지만")가 있으면 적는다
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 완료 조건
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+  - type: textarea
+    id: breakdown
+    attributes:
+      label: 하위 작업 계획
+      description: 레포별로 어떤 작업 이슈를 만들지. 실제 이슈는 각 코드 레포에서 만들고 여기에 sub-issue로 붙인다
+      placeholder: |
+        - worklearn-api: ...
+        - worklearn-web: ...
+        - worklearn-infra: ...
+  - type: checkboxes
+    id: docs
+    attributes:
+      label: 문서
+      options:
+        - label: 기획서에 이미 있는 기능이다
+        - label: 기획서 수정이 필요하다 (ADR 대상)
